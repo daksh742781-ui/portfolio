@@ -1,0 +1,82 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Daksh Agarwal — First-Year B.Tech CSE Student exploring technology and coding." />
+  <title>Daksh Agarwal | Portfolio</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet" />
+  <style>
+    :root { --bg:#0b1220; --card:#111c2f; --text:#edf4ff; --muted:#9aaac2; --line:#223149; --accent:#8b5cf6; --cyan:#38bdf8; }
+    * { box-sizing:border-box; }
+    html { scroll-behavior:smooth; }
+    body { margin:0; font-family:Inter,system-ui,sans-serif; color:var(--text); background:radial-gradient(circle at 10% 0%,#18244b 0,transparent 32%),radial-gradient(circle at 100% 90%,#11374a 0,transparent 28%),var(--bg); line-height:1.6; }
+    a { color:inherit; text-decoration:none; }
+    .container { width:min(1060px,calc(100% - 36px)); margin:auto; }
+    header { position:sticky; top:0; z-index:5; backdrop-filter:blur(18px); background:#0b1220cc; border-bottom:1px solid var(--line); }
+    nav { min-height:72px; display:flex; align-items:center; justify-content:space-between; gap:24px; }
+    .brand { display:flex; align-items:center; gap:10px; font-weight:700; }
+    .mark { display:grid; place-items:center; width:38px; height:38px; border-radius:12px; color:#fff; background:linear-gradient(135deg,var(--accent),var(--cyan)); font-size:13px; }
+    .links { display:flex; gap:24px; color:var(--muted); font-size:14px; }
+    .links a:hover { color:var(--text); }
+    .hero { min-height:calc(100vh - 72px); display:grid; grid-template-columns:1.3fr .7fr; align-items:center; gap:70px; padding:80px 0; }
+    .eyebrow { color:var(--cyan); text-transform:uppercase; letter-spacing:.14em; font-size:12px; font-weight:700; margin:0 0 14px; }
+    h1,h2,h3,p { margin-top:0; }
+    h1 { font-size:clamp(44px,8vw,82px); line-height:1; letter-spacing:-.07em; margin-bottom:20px; }
+    h2 { font-size:clamp(30px,5vw,44px); line-height:1.1; letter-spacing:-.05em; margin-bottom:12px; }
+    h3 { margin-bottom:10px; }
+    .tagline { color:var(--muted); font-size:clamp(18px,3vw,24px); margin-bottom:14px; }
+    .lead,.card p,.project p { color:var(--muted); max-width:64ch; }
+    .lead { font-size:16px; }
+    .actions { display:flex; gap:12px; flex-wrap:wrap; margin-top:28px; }
+    .button { display:inline-flex; align-items:center; justify-content:center; padding:12px 18px; border-radius:11px; border:1px solid var(--line); font-weight:600; font-size:14px; transition:transform .2s,border-color .2s; }
+    .button:hover { transform:translateY(-2px); border-color:var(--cyan); }
+    .primary { border:0; color:#fff; background:linear-gradient(135deg,var(--accent),#6d42d8); }
+    .hero-card,.card,.education,.profile,.contact { border:1px solid var(--line); background:#111c2fcc; border-radius:22px; box-shadow:0 20px 50px #0003; }
+    .hero-card { padding:28px; }
+    .hero-card strong { display:block; color:var(--cyan); text-transform:uppercase; letter-spacing:.12em; font-size:11px; margin-bottom:14px; }
+    .hero-card ul { padding-left:20px; margin:0; color:var(--muted); line-height:2.25; }
+    section { padding:84px 0 0; }
+    .section-title { margin-bottom:28px; }
+    .grid-2 { display:grid; grid-template-columns:1fr 1fr; gap:18px; }
+    .card,.education,.profile,.contact { padding:25px; }
+    .card p:last-child { margin-bottom:0; }
+    .accent { background:linear-gradient(135deg,#482a8b55,#123d4f55); }
+    .education { display:flex; align-items:center; gap:18px; }
+    .badge { padding:13px 14px; border-radius:12px; color:#fff; font-weight:700; background:linear-gradient(135deg,var(--accent),var(--cyan)); }
+    .education p { margin:3px 0; color:var(--muted); }
+    .interest-grid { display:grid; grid-template-columns:repeat(3,1fr); gap:12px; }
+    .interest { padding:18px; border:1px solid var(--line); border-radius:14px; background:#111c2f99; font-weight:600; }
+    .project { padding:28px; border:1px dashed #536483; border-radius:20px; background:#111c2f66; }
+    .project p:first-child { color:var(--text); font-size:18px; font-weight:600; }
+    .profile { display:flex; flex-direction:column; gap:5px; transition:transform .2s; }
+    .profile:hover { transform:translateY(-3px); }
+    .label { color:var(--cyan); text-transform:uppercase; letter-spacing:.12em; font-size:11px; font-weight:700; }
+    .contact { display:flex; align-items:center; justify-content:space-between; gap:20px; }
+    .social { display:flex; gap:10px; flex-wrap:wrap; }
+    footer { margin-top:84px; padding:24px 0 38px; border-top:1px solid var(--line); color:var(--muted); font-size:13px; }
+    .footer-inner { display:flex; justify-content:space-between; gap:20px; }
+    @media (max-width:760px) { .links { display:none; } .hero { grid-template-columns:1fr; gap:36px; padding:65px 0; } .grid-2 { grid-template-columns:1fr; } .interest-grid { grid-template-columns:1fr 1fr; } .contact,.footer-inner { flex-direction:column; align-items:flex-start; } }
+    @media (max-width:430px) { .interest-grid { grid-template-columns:1fr; } h1 { font-size:54px; } }
+  </style>
+</head>
+<body>
+  <header><nav class="container"><a class="brand" href="#top"><span class="mark">DA</span><span>Daksh Agarwal</span></a><div class="links"><a href="#about">About</a><a href="#education">Education</a><a href="#interests">Interests</a><a href="#projects">Projects</a><a href="#contact">Contact</a></div></nav></header>
+  <main id="top">
+    <section class="hero container">
+      <div><p class="eyebrow">First-Year B.Tech CSE Student</p><h1>Daksh<br />Agarwal</h1><p class="tagline">“Curious about technology. Ready to learn.”</p><p class="lead">I’m a first-year Computer Science &amp; Engineering student currently exploring the world of technology and looking forward to learning, collaborating, and getting involved in the coding community.</p><div class="actions"><a class="button primary" href="#about">About Me</a><a class="button" href="#contact">Contact</a></div></div>
+      <div class="hero-card"><strong>Currently exploring</strong><ul><li>Computer Science</li><li>Technology</li><li>Coding</li><li>Innovation</li></ul></div>
+    </section>
+    <section id="about" class="container"><div class="section-title"><p class="eyebrow">About</p><h2>My journey begins here</h2></div><div class="grid-2"><article class="card"><p>I’m currently pursuing B.Tech in Computer Science &amp; Engineering. I’m at the very beginning of my technical journey and am exploring what the field has to offer.</p><p>I’m interested in understanding how technology is built, learning from people around me, and getting involved in a community where I can learn through collaboration and practical experiences.</p></article><article class="card accent"><h3>Why I’m interested in coding</h3><p>Computer Science is a completely new field for me, and that’s what makes it exciting. I want to start by understanding the fundamentals, interacting with other students who are interested in technology, and learning through hands-on activities.</p></article></div></section>
+    <section id="education" class="container"><div class="section-title"><p class="eyebrow">Education</p><h2>Academic background</h2></div><div class="education"><span class="badge">B.Tech</span><div><h3>Computer Science &amp; Engineering</h3><p>[College Name]</p><p>First Year</p></div></div></section>
+    <section id="interests" class="container"><div class="section-title"><p class="eyebrow">Current interests</p><h2>Exploring the fundamentals</h2></div><div class="interest-grid"><div class="interest">Computer Science</div><div class="interest">Technology</div><div class="interest">Coding</div><div class="interest">Artificial Intelligence</div><div class="interest">Problem Solving</div><div class="interest">Innovation</div></div></section>
+    <section id="projects" class="container"><div class="section-title"><p class="eyebrow">Projects</p><h2>Building my foundation</h2></div><div class="project"><p>Currently starting my journey in technology.</p><p>I’m in the early stages of learning and exploring different aspects of computer science. I’m looking forward to gaining hands-on experience through projects, collaboration, and community involvement.</p></div></section>
+    <section class="container"><div class="section-title"><p class="eyebrow">Tech profile</p><h2>Learning and growing</h2></div><div class="grid-2"><a class="profile" href="#"><span class="label">GitHub</span><strong>[GitHub Link]</strong></a><a class="profile" href="#"><span class="label">LinkedIn</span><strong>[LinkedIn Link]</strong></a></div></section>
+    <section id="contact" class="container"><div class="section-title"><p class="eyebrow">Contact</p><h2>Let’s connect</h2></div><div class="contact"><div><span class="label">Email</span><a href="mailto:[Email]"><strong>[Email]</strong></a></div><div class="social"><a class="button" href="#">GitHub</a><a class="button" href="#">LinkedIn</a></div></div></section>
+  </main>
+  <footer><div class="container footer-inner"><span>© <span id="year"></span> Daksh Agarwal</span><span>Curious about technology. Ready to learn.</span></div></footer>
+  <script>document.getElementById('year').textContent=new Date().getFullYear();</script>
+</body>
+</html>
